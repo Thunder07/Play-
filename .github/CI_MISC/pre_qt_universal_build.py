@@ -79,6 +79,7 @@ def process_plugins():
             os.makedirs(os.path.dirname(new_plugin_path), exist_ok=True)
             print(f"Processing {plugin_name}")
             fix_library(orig_plugin_path, f"{qt_base}/plugins")
+            fix_library(other_plugin_path, f"{qt_base}/plugins")
             os.system(f"lipo -create -output {new_plugin_path} {orig_plugin_path} {other_plugin_path}")
 
 def prepare_folders():
