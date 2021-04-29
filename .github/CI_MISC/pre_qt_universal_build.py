@@ -20,7 +20,7 @@ def fix_framework(data, base_path):
     l = []
     for lib_name in data:
         new_lib_name = "/".join(lib_name.split("/")[4:])
-        new_lib_path = f"{base_path}/{new_lib_name}"
+        new_lib_path = f"@rpath/{new_lib_name}"
         l.append(f"-change {lib_name} {new_lib_path}")
     return " ".join(l).strip()
 
