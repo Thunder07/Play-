@@ -7,6 +7,10 @@ def fix_id(lib_name, base_path):
     if(lib_name.count("HOMEBREW_PREFIX") == 0):
         return ""
 
+    
+    if(lib_name.count("/plugins/")):
+        return f"-id {lib_name}"
+
     lib_name = lib_name.split(" (c")[0].strip().split("/")[-1]
     new_lib_path = f"{base_path}/{lib_name}.framework/Versions/5/{lib_name}"
     return f"-id {new_lib_path}"
