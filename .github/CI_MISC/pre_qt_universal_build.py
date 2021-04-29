@@ -7,7 +7,7 @@ def fix_id(lib_name, base_path):
     if(lib_name.count("HOMEBREW_PREFIX") == 0):
         return ""
 
-    if(lib_name.count("/plugins/")):
+    if(base_path.count("/plugins")):
         lib_name = lib_name.split(" (c")[0].strip().split("/")[-1]
         return f"-id {lib_name}"
 
