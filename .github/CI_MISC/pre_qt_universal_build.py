@@ -8,7 +8,7 @@ def fix_id(lib_name, base_path):
         return ""
 
     
-    if(lib_name.count("/plugins/")):
+    if(True):
         return f"-id {lib_name}"
 
     lib_name = lib_name.split(" (c")[0].strip().split("/")[-1]
